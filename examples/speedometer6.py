@@ -3,8 +3,9 @@ from pygwidget.speedometer import Speedometer
 from base import run_sprite
 
 package_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-background = os.path.join(package_dir, 'assets', 'scale_background1.png')
-indicator = os.path.join(package_dir, 'assets', 'indicator_5x200.png')
-sm = Speedometer(0, 0, scales=range(0, 250, 10), start_degree=330, stop_degree=210, label_height=15,
-                 indicator_image_path=indicator)
-run_sprite(sm)
+background = os.path.join(package_dir, 'assets', 'high-speed-speedometer-background.png')
+indicator = os.path.join(package_dir, 'assets', 'high-speed-speedometer-indicator.png')
+sm = Speedometer(0, 0, scales=range(0, 220, 20), start_degree=325, stop_degree=215,
+                 scale_anchor_x=560, scale_anchor_y=474, background_image_path=background,
+                 indicator_image_path=indicator, indicator_anchor_height=298)
+run_sprite(sm, size=(1024, 1024))
